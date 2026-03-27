@@ -23,7 +23,7 @@ public class Livro {
     private String isbn;
 
     @Column(name = "titulo", length = 150, nullable = false)
-    private LocalDate titulo;
+    private String titulo;
 
     @Column(name = "data_publicacao", nullable = false)
     private LocalDate dataPublicacao;
@@ -33,8 +33,8 @@ public class Livro {
     private GeneroLivro genero;
 
     @Column(name = "preco", precision = 18, scale = 2)
-    private Double preco;
-    //private BigDecimal preco;     BigDecimal é Melhor pra trablahar com preco pois tem mais precisão
+    private BigDecimal preco; //BigDecimal é Melhor pra trablahar com preco pois tem mais precisão
+    //private Double preco;     se for usar double precisa tirar o scale = 2 e tbm trabalhar com numeros menores
 
     @ManyToOne
     @JoinColumn(name = "id_autor", nullable = false)
